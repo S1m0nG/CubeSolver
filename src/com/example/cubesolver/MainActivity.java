@@ -77,10 +77,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		if (switch1.isChecked()) {
 			enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableBtIntent, 5);
-			this.addDevicesToLayout();
+			//this.addDevicesToLayout();
 		}
 		if (!switch1.isChecked()) {
 			mBluetoothAdapter.disable();
+			
 		}
 	}
 
