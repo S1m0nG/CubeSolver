@@ -6,5 +6,6 @@
     <string name="bluetooh_label">Bluetooth</string>
     <string name="photo_button">Take a Photo</string>
     <string name="center_color_button">Center Color</string>
+    <string name="enter_colors_button">Enter Colors</string>
 
 </resources>

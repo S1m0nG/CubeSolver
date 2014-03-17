@@ -111,7 +111,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			startActivityForResult(i, cameraData);
 			break;
 		case R.id.bColor:
-			
+			break;
+		case R.id.bEnterColors:
+			Toast.makeText(getApplicationContext(), "Works!", Toast.LENGTH_SHORT).show();;
+			break;
 		}
 	}
 

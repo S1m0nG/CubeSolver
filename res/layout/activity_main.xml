@@ -10,47 +10,64 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/bluetooh_label"
-            android:textSize="18sp" />
+            android:orientation="vertical" >
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:onClick="bluetoothSwitchOnClick" />
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-    <ImageView
-        android:id="@+id/ivReturnedPic"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_launcher" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/bluetooh_label"
+                    android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/bTakePic"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:text="@string/photo_button" />
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:onClick="bluetoothSwitchOnClick" />
+            </RelativeLayout>
 
-    <Button
-        android:id="@+id/bColor"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:text="@string/center_color_button" />
+            <ImageView
+                android:id="@+id/ivReturnedPic"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_launcher" />
+
+            <Button
+                android:id="@+id/bTakePic"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/photo_button" />
+
+            <Button
+                android:id="@+id/bColor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/center_color_button" />
+
+            <Button
+                android:id="@+id/bEnterColors"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/enter_colors_button" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
