@@ -6,28 +6,24 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
 	private BluetoothAdapter mBluetoothAdapter;
 	private Switch switch1;
 	private LinearLayout linDev;
-	private Button b, c;
-	private ImageView iv;
+	private Button bTakePic, bColor, bSend;
+	private ImageView ivReturnedPic;
 	private Intent i;
 	private final static int cameraData = 0;
 	private Bitmap bmp;
@@ -44,13 +40,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private void initialize() {
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 		switch1 = (Switch) findViewById(R.id.switch1);
-		
-		
-		iv = (ImageView) findViewById(R.id.ivReturnedPic);
-		b = (Button) findViewById(R.id.bTakePic);
-		b.setOnClickListener(this);
-		c = (Button) findViewById(R.id.bColor);
-		c.setOnClickListener(this);
+
+		ivReturnedPic = (ImageView) findViewById(R.id.ivReturnedPic);
+		bTakePic = (Button) findViewById(R.id.bTakePic);
+		bTakePic.setOnClickListener(this);
+		bColor = (Button) findViewById(R.id.bColor);
+		bColor.setOnClickListener(this);
+		bSend = (Button)findViewById(R.id.bSend);
+		bSend.setOnClickListener(this);
 	}
 
 	@Override
@@ -77,11 +74,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		if (switch1.isChecked()) {
 			enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableBtIntent, 5);
-			//this.addDevicesToLayout();
+			// this.addDevicesToLayout();
 		}
 		if (!switch1.isChecked()) {
 			mBluetoothAdapter.disable();
-			
+
 		}
 	}
 
@@ -111,10 +108,27 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			startActivityForResult(i, cameraData);
 			break;
 		case R.id.bColor:
+			Toast.makeText(getApplicationContext(), "Front Side",
+					Toast.LENGTH_SHORT).show();
+			Intent enter = new Intent(MainActivity.this, EnterActivity.class);
+			startActivity(enter);
 			break;
-		case R.id.bEnterColors:
-			Toast.makeText(getApplicationContext(), "Works!", Toast.LENGTH_SHORT).show();;
-			break;
+		case R.id.bSend:
+			Toast.makeText(getApplicationContext(), "Front Side",
+					Toast.LENGTH_SHORT).show();
+			BTComm btcomm = new BTComm();
+			btcomm.enableBT();
+			btcomm.connectToNXTs();
+			try {
+				btcomm.writeMessage(Byte.parseByte("21"));
+				btcomm.writeMessage(Byte.parseByte("11"));
+				btcomm.writeMessage(Byte.parseByte("21"));
+				btcomm.writeMessage(Byte.parseByte("11"));
+				btcomm.writeMessage(Byte.parseByte("21"));
+				btcomm.writeMessage(Byte.parseByte("11"));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -125,7 +139,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		if (resultCode == RESULT_OK) {
 			Bundle extras = data.getExtras();
 			bmp = (Bitmap) extras.get("data");
-			iv.setImageBitmap(bmp);
+			ivReturnedPic.setImageBitmap(bmp);
 		}
 	}
 }

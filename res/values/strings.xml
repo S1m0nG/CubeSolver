@@ -7,5 +7,8 @@
     <string name="photo_button">Take a Photo</string>
     <string name="center_color_button">Center Color</string>
     <string name="enter_colors_button">Enter Colors</string>
+    <string name="title_activity_enter">EnterActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tv_enter_side">Please enter the %side side of the cube!</string>
 
 </resources>
