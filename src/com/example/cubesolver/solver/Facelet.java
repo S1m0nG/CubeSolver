@@ -1,4 +1,4 @@
-package org.kociemba.twophase;
+package com.example.cubesolver.solver;
 
 /**
  * <pre>

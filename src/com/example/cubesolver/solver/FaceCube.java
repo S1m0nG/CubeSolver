@@ -1,9 +1,9 @@
-package org.kociemba.twophase;
+package com.example.cubesolver.solver;
 
-import static org.kociemba.twophase.Facelet.*;
-import static org.kociemba.twophase.Color.*;
-import static org.kociemba.twophase.Corner.*;
-import static org.kociemba.twophase.Edge.*;
+import static com.example.cubesolver.solver.Color.*;
+import static com.example.cubesolver.solver.Corner.*;
+import static com.example.cubesolver.solver.Edge.*;
+import static com.example.cubesolver.solver.Facelet.*;
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //Cube on the facelet level

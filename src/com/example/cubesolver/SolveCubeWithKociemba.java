@@ -1,5 +1,9 @@
 package com.example.cubesolver;
-import org.kociemba.twophase.*;
+import com.example.cubesolver.solver.*;
+
+import com.example.cubesolver.solver.Search;
+
+import android.util.Log;
 
 public class SolveCubeWithKociemba {
 	
@@ -10,10 +14,11 @@ public class SolveCubeWithKociemba {
 	}
 	
 	public void solve(){
-		solution = Search.solution(cube, 24, 5, false);
+		solution = Search.solution(cube, 24, 15, false);
 	}
 	
 	public String returnSolution(){
-		return solution;
+		Log.d("SolveCubeWithKociemba", "Test");
+		return Search.solution("BDUBUULDURBLRRFRUUFRFDFUBDFUBDFDFBLRLRDLLFRRLFLDLBUBBD", 24, 15, false);
 	}
 }

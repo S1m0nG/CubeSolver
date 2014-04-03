@@ -1,4 +1,6 @@
-package org.kociemba.twophase;
+package com.example.cubesolver.solver;
+
+import android.util.Log;
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 /**
@@ -137,7 +139,7 @@ public class Search {
 	 */
 	public static String solution(String facelets, int maxDepth, long timeOut, boolean useSeparator) {
 		int s;
-
+		
 		// +++++++++++++++++++++check for wrong input +++++++++++++++++++++++++++++
 		int[] count = new int[6];
 		try {
@@ -154,6 +156,8 @@ public class Search {
 		CubieCube cc = fc.toCubieCube();
 		if ((s = cc.verify()) != 0)
 			return "Error " + Math.abs(s);
+		
+		Log.d("Moin","Test");
 
 		// +++++++++++++++++++++++ initialization +++++++++++++++++++++++++++++++++
 		CoordCube c = new CoordCube(cc);
@@ -175,6 +179,8 @@ public class Search {
 		int depthPhase1 = 1;
 
 		long tStart = System.currentTimeMillis();
+		
+		Log.d("Moin","Test");
 
 		// +++++++++++++++++++ Main loop ++++++++++++++++++++++++++++++++++++++++++
 		do {
@@ -194,6 +200,9 @@ public class Search {
 								return "Error 8";
 
 							if (n == 0) {
+								
+								Log.d("Moin","Test");
+								
 								if (depthPhase1 >= maxDepth)
 									return "Error 7";
 								else {

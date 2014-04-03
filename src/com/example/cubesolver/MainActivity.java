@@ -2,12 +2,17 @@ package com.example.cubesolver;
 
 import java.util.Set;
 
+import com.example.cubesolver.ownsolution.Cube;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.support.v4.app.DialogFragment;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -114,21 +119,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			startActivity(enter);
 			break;
 		case R.id.bSend:
+//			Cube cube = new Cube("BDUBUULDURBLRRFRUUFRFDFUBDFUBDFDFBLRLRDLLFRRLFLDLBUBBD");
+			Cube cube = new Cube("UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB");
 			Toast.makeText(getApplicationContext(), "Front Side",
 					Toast.LENGTH_SHORT).show();
-			BTComm btcomm = new BTComm();
-			btcomm.enableBT();
-			btcomm.connectToNXTs();
-			try {
-				btcomm.writeMessage(Byte.parseByte("21"));
-				btcomm.writeMessage(Byte.parseByte("11"));
-				btcomm.writeMessage(Byte.parseByte("21"));
-				btcomm.writeMessage(Byte.parseByte("11"));
-				btcomm.writeMessage(Byte.parseByte("21"));
-				btcomm.writeMessage(Byte.parseByte("11"));
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//			BTComm btcomm = new BTComm();
+//			btcomm.enableBT();
+//			btcomm.connectToNXTs();
+//			try {
+//				btcomm.writeMessage(Byte.parseByte("31"));
+//				btcomm.writeMessage(Byte.parseByte("52"));
+//				btcomm.writeMessage(Byte.parseByte("63"));
+//				btcomm.writeMessage(Byte.parseByte("22"));
+//				btcomm.writeMessage(Byte.parseByte("11"));
+//				btcomm.writeMessage(Byte.parseByte("43"));
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 		}
 	}
 

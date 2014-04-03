@@ -1,4 +1,4 @@
-package org.kociemba.twophase;
+package com.example.cubesolver.solver;
 
 //++++++++++++++++++++++++++++++ Names the colors of the cube facelets ++++++++++++++++++++++++++++++++++++++++++++++++
 enum Color {

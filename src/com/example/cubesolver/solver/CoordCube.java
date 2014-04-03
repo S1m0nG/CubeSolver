@@ -1,4 +1,6 @@
-package org.kociemba.twophase;
+package com.example.cubesolver.solver;
+
+import android.util.Log;
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Representation of the cube on the coordinate level
@@ -33,14 +35,23 @@ class CoordCube {
 	// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	// Generate a CoordCube from a CubieCube
 	CoordCube(CubieCube c) {
-		twist = c.getTwist();
-		flip = c.getFlip();
-		parity = c.cornerParity();
-		FRtoBR = c.getFRtoBR();
-		URFtoDLF = c.getURFtoDLF();
-		URtoUL = c.getURtoUL();
-		UBtoDF = c.getUBtoDF();
-		URtoDF = c.getURtoDF();// only needed in phase2
+		Log.d("Moin","Test");
+//		twist = c.getTwist();
+		Log.d("Moin","Test");
+//		flip = c.getFlip();
+		Log.d("Moin","Test");
+//		parity = c.cornerParity();
+		Log.d("Moin","Test");
+//		FRtoBR = c.getFRtoBR();
+		Log.d("Moin","Test");
+//		URFtoDLF = c.getURFtoDLF();
+		Log.d("Moin","Test");
+//		URtoUL = c.getURtoUL();
+		Log.d("Moin","Test");
+//		UBtoDF = c.getUBtoDF();
+		Log.d("Moin","Test");
+//		URtoDF = c.getURtoDF();// only needed in phase2
+		Log.d("Moin","Test");
 	}
 
 	// A move on the coordinate level
@@ -68,6 +79,7 @@ class CoordCube {
 	static {
 		CubieCube a = new CubieCube();
 		for (short i = 0; i < N_TWIST; i++) {
+			Log.d(i+"", "Test");
 			a.setTwist(i);
 			for (int j = 0; j < 6; j++) {
 				for (int k = 0; k < 3; k++) {
@@ -117,6 +129,7 @@ class CoordCube {
 	static {
 		CubieCube a = new CubieCube();
 		for (short i = 0; i < N_FRtoBR; i++) {
+			Log.d(i+"", "Test");
 			a.setFRtoBR(i);
 			for (int j = 0; j < 6; j++) {
 				for (int k = 0; k < 3; k++) {
@@ -139,6 +152,7 @@ class CoordCube {
 	static {
 		CubieCube a = new CubieCube();
 		for (short i = 0; i < N_URFtoDLF; i++) {
+			Log.d(i+"", "Test");
 			a.setURFtoDLF(i);
 			for (int j = 0; j < 6; j++) {
 				for (int k = 0; k < 3; k++) {
@@ -181,6 +195,7 @@ class CoordCube {
 	static {
 		CubieCube a = new CubieCube();
 		for (short i = 0; i < N_URtoUL; i++) {
+			Log.d(i+"", "Test");
 			a.setURtoUL(i);
 			for (int j = 0; j < 6; j++) {
 				for (int k = 0; k < 3; k++) {
@@ -198,6 +213,7 @@ class CoordCube {
 	static {
 		CubieCube a = new CubieCube();
 		for (short i = 0; i < N_UBtoDF; i++) {
+			Log.d(i+"", "Test");
 			a.setUBtoDF(i);
 			for (int j = 0; j < 6; j++) {
 				for (int k = 0; k < 3; k++) {
@@ -216,6 +232,7 @@ class CoordCube {
 		// for i, j <336 the six edges UR,UF,UL,UB,DR,DF are not in the
 		// UD-slice and the index is <20160
 		for (short uRtoUL = 0; uRtoUL < 336; uRtoUL++) {
+			Log.d(uRtoUL+"", "Test");
 			for (short uBtoDF = 0; uBtoDF < 336; uBtoDF++) {
 				MergeURtoULandUBtoDF[uRtoUL][uBtoDF] = (short) CubieCube.getURtoDF(uRtoUL, uBtoDF);
 			}
@@ -236,6 +253,7 @@ class CoordCube {
 		int done = 1;
 		while (done != N_SLICE2 * N_URFtoDLF * N_PARITY) {
 			for (int i = 0; i < N_SLICE2 * N_URFtoDLF * N_PARITY; i++) {
+				Log.d(i+"", "Test");
 				int parity = i % 2;
 				int URFtoDLF = (i / 2) / N_SLICE2;
 				int slice = (i / 2) % N_SLICE2;
@@ -280,6 +298,7 @@ class CoordCube {
 		int done = 1;
 		while (done != N_SLICE2 * N_URtoDF * N_PARITY) {
 			for (int i = 0; i < N_SLICE2 * N_URtoDF * N_PARITY; i++) {
+				Log.d(i+"", "Test");
 				int parity = i % 2;
 				int URtoDF = (i / 2) / N_SLICE2;
 				int slice = (i / 2) % N_SLICE2;

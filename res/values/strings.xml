@@ -9,6 +9,7 @@
     <string name="enter_colors_button">Enter Colors</string>
     <string name="title_activity_enter">EnterActivity</string>
     <string name="hello_world">Hello world!</string>
-    <string name="tv_enter_side">Please enter the %side side of the cube!</string>
+    <string name="tv_enter_side">Please enter the %s side of the cube!</string>
+	<string name="submit_button">Submit!</string>
 
 </resources>
