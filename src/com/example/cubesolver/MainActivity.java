@@ -123,19 +123,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			Cube cube = new Cube("UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB");
 			Toast.makeText(getApplicationContext(), "Front Side",
 					Toast.LENGTH_SHORT).show();
-//			BTComm btcomm = new BTComm();
-//			btcomm.enableBT();
-//			btcomm.connectToNXTs();
-//			try {
-//				btcomm.writeMessage(Byte.parseByte("31"));
-//				btcomm.writeMessage(Byte.parseByte("52"));
-//				btcomm.writeMessage(Byte.parseByte("63"));
-//				btcomm.writeMessage(Byte.parseByte("22"));
-//				btcomm.writeMessage(Byte.parseByte("11"));
-//				btcomm.writeMessage(Byte.parseByte("43"));
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
+			BTComm btcomm = new BTComm();
+			btcomm.enableBT();
+			btcomm.connectToNXTs();
+			try {
+				btcomm.writeMessage(Byte.parseByte("31"));
+				btcomm.writeMessage(Byte.parseByte("52"));
+				btcomm.writeMessage(Byte.parseByte("63"));
+				btcomm.writeMessage(Byte.parseByte("22"));
+				btcomm.writeMessage(Byte.parseByte("11"));
+				btcomm.writeMessage(Byte.parseByte("43"));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
